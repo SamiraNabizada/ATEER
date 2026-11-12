@@ -1,0 +1,1301 @@
+
+/* =====================================
+   ROOT
+===================================== */
+
+:root {
+  --black: #090909;
+  --dark: #11100e;
+  --gold: #c8a45d;
+  --gold-light: #e2c58a;
+  --white: #f4f0e9;
+  --muted: #a9a39a;
+
+  font-family: "DM Sans", sans-serif;
+
+  color: var(--white);
+  background: var(--black);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--black);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+
+/* =====================================
+   CURSOR GLOW
+===================================== */
+
+.cursor-glow {
+  position: fixed;
+
+  width: 290px;
+  height: 290px;
+
+  left: 0;
+  top: 0;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 10;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(246, 213, 139, 0.15) 0%,
+    rgba(212, 169, 77, 0.09) 25%,
+    rgba(197, 165, 109, 0.035) 50%,
+    transparent 72%
+  );
+
+  filter: blur(10px);
+
+  mix-blend-mode: screen;
+}
+
+.cursor-glow::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 42%;
+
+  border-radius: 50%;
+
+  background: #e3c27e;
+
+  box-shadow: 0 0 20px 8px #d7ad5d35;
+
+  filter: blur(14px);
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.site-header {
+  height: 95px;
+
+  padding: 0 7%;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 20;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.logo {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 34px;
+
+  font-weight: 700;
+
+  letter-spacing: 5px;
+
+  color: var(--gold-light);
+}
+
+.logo span {
+  color: #fff;
+}
+
+.main-nav {
+  display: flex;
+  gap: 38px;
+}
+
+.main-nav a {
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+
+  color: #c9c3b9;
+
+  transition: 0.3s;
+}
+
+.main-nav a:hover {
+  color: var(--gold-light);
+}
+
+.header-cta {
+  border: 1px solid rgba(200, 164, 93, 0.6);
+
+  padding: 13px 23px;
+
+  color: var(--gold-light);
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  transition: 0.3s;
+}
+
+.header-cta:hover {
+  background: var(--gold);
+  color: #080808;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero {
+  min-height: 760px;
+  height: 100vh;
+  max-height: 1000px;
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  align-items: center;
+
+  padding: 110px 7% 50px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 72% 45%,
+      rgba(126, 91, 40, 0.13),
+      transparent 48%
+    ),
+    #090909;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+
+  max-width: 540px;
+}
+
+.eyebrow {
+  color: var(--gold);
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(65px, 7vw, 110px);
+
+  line-height: 0.91;
+
+  font-weight: 400;
+
+  letter-spacing: -3px;
+
+  color: #f3eee5;
+}
+
+.hero h1 em,
+.section-heading h2 em,
+.intro h2 em,
+.notes-section h2 em {
+  color: var(--gold-light);
+  font-weight: 400;
+}
+
+.hero-description {
+  max-width: 350px;
+
+  margin-top: 32px;
+
+  color: #aaa49b;
+
+  font-size: 13px;
+
+  line-height: 2.1;
+
+  font-weight: 300;
+}
+
+.gold-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 32px;
+
+  margin-top: 38px;
+
+  padding: 17px 22px;
+
+  background: var(--gold);
+
+  color: #100d08;
+
+  font-size: 9px;
+
+  letter-spacing: 1.8px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.gold-button:hover {
+  background: #e6c98d;
+  transform: translateY(-3px);
+}
+
+.gold-button span {
+  font-size: 17px;
+}
+
+.hero-bottom-text {
+  display: flex;
+
+  gap: 38px;
+
+  margin-top: 100px;
+
+  color: #777168;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+}
+
+.hero-stage {
+  position: relative;
+
+  width: 100%;
+  height: 650px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.stage-halo {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(191, 145, 67, 0.16),
+    rgba(191, 145, 67, 0.035) 48%,
+    transparent 70%
+  );
+
+  filter: blur(20px);
+}
+
+#three-container {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  z-index: 2;
+
+  cursor: grab;
+}
+
+#three-container:active {
+  cursor: grabbing;
+}
+
+#three-container canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.drag-hint {
+  position: absolute;
+
+  bottom: 32px;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  color: #938875;
+
+  z-index: 4;
+}
+
+.drag-hint span {
+  color: var(--gold-light);
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.stage-index {
+  position: absolute;
+
+  right: 0;
+  bottom: 32px;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: var(--gold);
+}
+
+.hero-side-label {
+  position: absolute;
+
+  right: 24px;
+  top: 50%;
+
+  transform: rotate(90deg) translateX(50%);
+
+  transform-origin: right;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  color: #786c57;
+}
+
+
+/* =====================================
+   INTRO
+===================================== */
+
+.intro {
+  background: #090909;
+
+  text-align: center;
+
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.intro h2,
+.notes-section h2 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(42px, 5.4vw, 75px);
+
+  font-weight: 400;
+
+  line-height: 1.1;
+}
+
+.intro-description {
+  max-width: 530px;
+
+  margin: 32px auto 0;
+
+  color: #a9a39a;
+
+  font-size: 12px;
+
+  line-height: 2.2;
+}
+
+
+/* =====================================
+   COLLECTION
+===================================== */
+
+.collection {
+  background: #0b0b0a;
+
+  padding-top: 100px;
+  padding-bottom: 130px;
+}
+
+.section-pad {
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.section-heading {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: end;
+
+  margin-bottom: 55px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 17px;
+}
+
+.section-heading h2 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(42px, 5vw, 70px);
+
+  font-weight: 400;
+}
+
+.section-heading > p {
+  color: #9c968b;
+
+  font-size: 11px;
+
+  padding-bottom: 10px;
+}
+
+.product-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+}
+
+.product-card {
+  min-width: 0;
+}
+
+.product-art {
+  position: relative;
+
+  height: 410px;
+
+  overflow: hidden;
+
+  display: block;
+
+  isolation: isolate;
+
+  border: 1px solid rgba(200, 164, 93, 0.17);
+
+  transition: border-color 0.4s;
+}
+
+.product-card:hover .product-art {
+  border-color: rgba(200, 164, 93, 0.55);
+}
+
+.art-one {
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #70502d55,
+      transparent 58%
+    ),
+    linear-gradient(145deg, #17130f, #090909);
+}
+
+.art-two {
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #c16e8040,
+      transparent 58%
+    ),
+    linear-gradient(145deg, #241719, #100d0e);
+}
+
+.art-three {
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #bf7e273d,
+      transparent 58%
+    ),
+    linear-gradient(145deg, #21170e, #0d0b08);
+}
+
+/* Hide old CSS-made bottles */
+
+.product-art::before,
+.product-art::after {
+  content: none !important;
+  display: none !important;
+}
+
+.product-canvas {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  cursor: grab;
+
+  touch-action: pan-y;
+}
+
+.product-canvas:active {
+  cursor: grabbing;
+}
+
+.product-number {
+  position: absolute;
+
+  right: 22px;
+  bottom: 18px;
+
+  z-index: 2;
+
+  color: rgba(220, 193, 142, 0.7);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 18px;
+
+  letter-spacing: 2px;
+
+  pointer-events: none;
+}
+
+.product-info {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  padding-top: 22px;
+}
+
+.product-info h3 {
+  color: #d6bd8b;
+
+  font-size: 11px;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 9px;
+}
+
+.product-info p {
+  color: #aaa398;
+
+  font-size: 11px;
+}
+
+.product-info > span {
+  color: #7e776c;
+
+  font-size: 8px;
+
+  letter-spacing: 1.3px;
+
+  white-space: nowrap;
+
+  padding-top: 3px;
+}
+
+
+/* =====================================
+   FRAGRANCE NOTES
+===================================== */
+
+.notes-section {
+  background: #090909;
+
+  padding-top: 130px;
+  padding-bottom: 140px;
+
+  text-align: center;
+}
+
+.notes-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 40px;
+
+  margin-top: 75px;
+}
+
+.note-item {
+  padding: 35px 20px;
+
+  border-top: 1px solid rgba(200, 164, 93, 0.35);
+}
+
+.note-item > span {
+  font-family: "Cormorant Garamond", serif;
+
+  color: var(--gold);
+
+  font-size: 24px;
+}
+
+.note-item h3 {
+  margin-top: 20px;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: #e1d2b3;
+}
+
+.note-item p {
+  margin-top: 15px;
+
+  font-size: 11px;
+
+  color: #969087;
+
+  line-height: 2;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.site-footer {
+  min-height: 180px;
+
+  padding: 45px 7%;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  background: #080808;
+}
+
+.site-footer > p {
+  font-size: 9px;
+
+  color: #a99b7f;
+
+  letter-spacing: 2px;
+}
+
+.site-footer > span {
+  color: #716c63;
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1000px) {
+
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .hero-stage {
+    height: 550px;
+  }
+
+  .hero h1 {
+    font-size: 75px;
+  }
+
+  .product-art {
+    height: 340px;
+  }
+
+  .product-info {
+    flex-direction: column;
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .site-header {
+    height: 78px;
+  }
+
+  .main-nav {
+    position: absolute;
+
+    top: 78px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 30px;
+
+    background: #100f0d;
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    border-bottom: 1px solid rgba(200, 164, 93, 0.2);
+  }
+
+  .main-nav.nav-open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 25px;
+    height: 1px;
+
+    background: var(--gold-light);
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .hero {
+    min-height: 950px;
+    height: auto;
+
+    grid-template-columns: 1fr;
+
+    padding-top: 150px;
+  }
+
+  .hero-content {
+    text-align: center;
+
+    margin: auto;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-bottom-text {
+    justify-content: center;
+
+    margin-top: 45px;
+  }
+
+  .hero-stage {
+    height: 480px;
+  }
+
+  .hero-side-label {
+    display: none;
+  }
+
+  .stage-index {
+    right: 15px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+
+    gap: 25px;
+
+    text-align: center;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .site-header {
+    padding: 0 6%;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  .hero {
+    padding-left: 6%;
+    padding-right: 6%;
+
+    min-height: 850px;
+  }
+
+  .hero h1 {
+    font-size: 65px;
+  }
+
+  .hero-stage {
+    height: 400px;
+  }
+
+  .stage-halo {
+    width: 280px;
+    height: 280px;
+  }
+
+  .section-pad {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .intro {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .collection {
+    padding-top: 80px;
+    padding-bottom: 90px;
+  }
+
+  .section-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-art {
+    height: 370px;
+  }
+
+  .product-info {
+    flex-direction: row;
+  }
+
+  .notes-section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .cursor-glow {
+    display: none;
+  }
+
+}
+
+
+@media (pointer: coarse) {
+
+  .cursor-glow {
+    display: none;
+  }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+}
+ 
+/* =====================================
+   ATEER - FINAL RESPONSIVE OVERRIDES
+===================================== */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.hero,
+.intro,
+.collection,
+.notes-section,
+.site-footer {
+  min-width: 0;
+}
+
+.hero-content,
+.hero-stage,
+.product-card {
+  min-width: 0;
+}
+
+.hero-stage,
+#three-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+#three-container canvas,
+.product-canvas {
+  display: block;
+  max-width: 100%;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .site-header {
+    padding: 0 5%;
+  }
+
+  .hero {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 125px 6% 45px;
+    gap: 10px;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(58px, 9vw, 76px);
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-bottom-text {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+    margin-top: 40px;
+  }
+
+  .hero-stage {
+    height: clamp(350px, 65vw, 480px);
+  }
+
+  .stage-halo {
+    width: min(75vw, 380px);
+    height: min(75vw, 380px);
+  }
+
+  .hero-side-label {
+    display: none;
+  }
+
+  .section-pad {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .product-art {
+    height: clamp(280px, 42vw, 360px);
+  }
+
+  .product-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .product-info > span {
+    white-space: normal;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .site-footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 22px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .site-header {
+    height: 70px;
+    padding: 0 6%;
+  }
+
+  .main-nav {
+    top: 70px;
+    padding: 25px 6%;
+  }
+
+  .logo {
+    font-size: 27px;
+    letter-spacing: 4px;
+  }
+
+  .hero {
+    padding: 110px 6% 35px;
+    gap: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 11.5vw, 60px);
+    line-height: 1;
+    letter-spacing: -1.5px;
+  }
+
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 2px;
+    line-height: 1.8;
+  }
+
+  .hero-description {
+    font-size: 11px;
+    line-height: 1.9;
+    max-width: 320px;
+    margin-top: 22px;
+  }
+
+  .gold-button {
+    margin-top: 28px;
+    padding: 15px 17px;
+    gap: 18px;
+    font-size: 8px;
+  }
+
+  .hero-bottom-text {
+    margin-top: 30px;
+    gap: 12px 18px;
+    font-size: 7px;
+    letter-spacing: 1.3px;
+  }
+
+  .hero-stage {
+    height: 350px;
+  }
+
+  .stage-halo {
+    width: 270px;
+    height: 270px;
+  }
+
+  .drag-hint {
+    bottom: 12px;
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .stage-index {
+    right: 0;
+    bottom: 12px;
+    font-size: 8px;
+  }
+
+  .intro,
+  .notes-section {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .intro h2,
+  .notes-section h2,
+  .section-heading h2 {
+    font-size: clamp(35px, 9vw, 46px);
+    line-height: 1.1;
+  }
+
+  .intro-description {
+    font-size: 11px;
+    line-height: 2;
+  }
+
+  .collection {
+    padding-top: 75px;
+    padding-bottom: 85px;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 35px;
+  }
+
+  .section-heading > p {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+
+  .product-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+  }
+
+  .product-art {
+    height: clamp(300px, 90vw, 370px);
+  }
+
+  .product-info {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    padding-top: 17px;
+  }
+
+  .product-info h3 {
+    font-size: 10px;
+  }
+
+  .product-info p {
+    font-size: 10px;
+  }
+
+  .product-info > span {
+    font-size: 7px;
+    text-align: right;
+  }
+
+  .notes-grid {
+    margin-top: 40px;
+  }
+
+  .note-item {
+    padding: 25px 12px;
+  }
+
+  .site-footer {
+    min-height: 0;
+    padding: 40px 6%;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .site-footer > p {
+    font-size: 8px;
+  }
+
+  .site-footer > span {
+    font-size: 7px;
+    line-height: 1.8;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .hero-bottom-text {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .product-info {
+    flex-direction: column;
+  }
+
+  .product-info > span {
+    text-align: left;
+  }
+
+  .hero-stage {
+    height: 320px;
+  }
+}
+
+/* Touch screens */
+@media (pointer: coarse) {
+  .cursor-glow {
+    display: none;
+  }
+}
